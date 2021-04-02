@@ -1,27 +1,28 @@
-# Frontend3
+http://localhost:4200/auth/login
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
 
-## Development server
+Auth Login
+1.- public/authentication.actions.ts  			(Actions)
+2.- public/authentication/login/login.component.ts 	(Disparador de dispatch)
+3.- public/authentication/authentication.effects     	(Efecto)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+4.- El efecto guarda token en cookie y envia datos simples al reducer.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Users Me
+1.- private/users/users.actions  			(Actions)
+2.- app/application.service 				(Disparador de dispatch antes que se inicie la app, basado en token)
+3.- private/users/users.effects				(Efecto de users/me)
+4.- private/users/users.reducers			(Asignacion de data, user, selectedClient, availableClients)
 
-## Build
+En el proceso anterior, cada F5 asegura que tengamos en el store, el selectedClient, availableClient y userDetails
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+http://localhost:4200/choose-project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Choose Project
+1.- private\projects\projects.actions.ts		(Actions)
+2.- private\private-header\private-header.component.ts	(Disparador de dispatch, cambiante)
+3.- private\projects\projects.effects.ts		(Efectos)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4.- private\projects\choose-project\choose-project.component.ts		(Table final)
